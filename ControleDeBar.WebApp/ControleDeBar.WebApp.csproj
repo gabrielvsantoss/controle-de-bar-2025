@@ -16,5 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ControleDeBar.Dominio\ControleDeBar.Dominio.csproj" />
     <ProjectReference Include="..\ControleDeBar.Infraestrutura.Arquivos\ControleDeBar.Infraestrutura.Arquivos.csproj" />
+    <ProjectReference Include="..\ControleDeBar.Infraestrutura.SqlServer\ControleDeBar.Infraestrutura.SqlServer.csproj" />
   </ItemGroup>
 </Project>
