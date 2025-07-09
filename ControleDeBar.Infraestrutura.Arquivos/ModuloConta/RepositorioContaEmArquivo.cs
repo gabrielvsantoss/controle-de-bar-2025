@@ -76,4 +76,9 @@ public class RepositorioContaEmArquivo : IRepositorioConta
 
         return contasDoPeriodo;
     }
+
+    public void AdicionarPedido(Conta conta, Pedido pedido)
+    {
+        throw new NotImplementedException();
+    }
 }

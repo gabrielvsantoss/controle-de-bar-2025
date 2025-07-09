@@ -14,7 +14,7 @@ public class Conta : EntidadeBase<Conta>
     public DateTime Fechamento { get; set; }
     public bool EstaAberta { get; set; }
     public List<Pedido> Pedidos { get; set; }
-
+     
     public Conta()
     {
         Pedidos = new List<Pedido>();

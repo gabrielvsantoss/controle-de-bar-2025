@@ -101,7 +101,7 @@ namespace ControleDeBar.Infraestrutura.SqlServer.ModuloMesa
 
             if (leitor.Read())
             {
-                mesa = ConverterParaGarcom(leitor);
+                mesa = ConverterParaMesa(leitor);
             }
             return mesa;
         }
@@ -130,7 +130,7 @@ namespace ControleDeBar.Infraestrutura.SqlServer.ModuloMesa
 
             while (leitor.Read())
             {
-                var mesa = ConverterParaGarcom(leitor);
+                var mesa = ConverterParaMesa(leitor);
 
                 mesas.Add(mesa);
             }
@@ -138,7 +138,7 @@ namespace ControleDeBar.Infraestrutura.SqlServer.ModuloMesa
             conexaoComBanco.Close();
             return mesas;
         }
-        private Mesa ConverterParaGarcom(SqlDataReader leitor)
+        private Mesa ConverterParaMesa(SqlDataReader leitor)
         {
             var mesa = new Mesa
                 (
