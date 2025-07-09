@@ -3,7 +3,6 @@ using System.Data;
 using ControleDeBar.Dominio.ModuloConta;
 using ControleDeBar.Dominio.ModuloGarcom;
 using ControleDeBar.Dominio.ModuloMesa;
-using ControleDeBar.Dominio.ModuloProduto;
 using Microsoft.Data.SqlClient;
 
 namespace ControleDeBar.Infraestrutura.SqlServer.ModuloConta
@@ -291,7 +290,7 @@ namespace ControleDeBar.Infraestrutura.SqlServer.ModuloConta
             FROM
                 [TBCONTA] AS CONTA
             INNER JOIN
-                [TBGARCOM] AS GARCOM ON C.[GARCOM_ID] = GARCOM.[ID]
+                [TBGARCOM] AS GARCOM ON CONTA.[GARCOM_ID] = GARCOM.[ID]
             INNER JOIN 
                 [TBMESA] AS MESA ON CONTA.[MESA_ID] = MESA.[ID]
             WHERE
@@ -303,7 +302,7 @@ namespace ControleDeBar.Infraestrutura.SqlServer.ModuloConta
 
             SqlCommand comandoSelecao = new(sqlSelecionarTodos, conexaoComBanco);
 
-            comandoSelecao.Parameters.AddWithValue("FECHAMENTO", data.Date);
+            comandoSelecao.Parameters.AddWithValue("DATAFECHAMENTO", data.Date);
 
             SqlDataReader leitor = comandoSelecao.ExecuteReader();
 
